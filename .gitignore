@@ -7,6 +7,5 @@
 /include/
 /lib/
 O.*/
-*.local
 envPaths
 RELEASE_SITE
