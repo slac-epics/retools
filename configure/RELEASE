@@ -18,6 +18,7 @@
 # or include statements that pull in similar RELEASE files.
 # Build settings that are NOT module paths should appear in a
 # CONFIG_SITE file.
+-include $(TOP)/RELEASE_SITE
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
@@ -25,7 +26,8 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/usr/lib/epics
+#EPICS_BASE=/usr/lib/epics
+EPICS_BASE = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:

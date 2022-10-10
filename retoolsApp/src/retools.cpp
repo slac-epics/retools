@@ -5,22 +5,26 @@
 #include <dbStaticLib.h>
 #include <dbAccessDefs.h>
 #include <functional>
-#include <regex>
+//#include <regex>
+#include <string>
+#include <assert.h>
 
-using std::regex;
-using std::regex_replace;
-using std::regex_error;
+//using std::regex;
+//using std::regex_replace;
+//using std::regex_error;
 using std::string;
 
 int reToolsVerbose = 1;
 
-typedef std::function<void(DBENTRY*,string const &,string const &)>
-    foreach_func_t;
+//typedef std::function<void(DBENTRY*,string const &,string const &)>
+//    foreach_func_t;
 
+typedef int foreach_func_t;
 int forEachMatchingRecord(string const & pattern, string const & replace,
     foreach_func_t func)
 {
-    regex re;
+	assert(0);
+/*    regex re;
 
     try {
         re = regex(pattern);
@@ -60,12 +64,14 @@ int forEachMatchingRecord(string const & pattern, string const & replace,
         }
         _status = dbNextRecordType(&_entry);
     }
-    dbFinishEntry(&_entry);
+    dbFinishEntry(&_entry); */
     return EXIT_SUCCESS;
 }
 
 long epicsShareAPI reGrep(const char *pattern)
 {
+	assert(0);
+	/*
     if (!pattern) {
         errlogSevPrintf(errlogMinor, "Usage: %s \"pattern\"\n", __func__);
         return EXIT_FAILURE;
@@ -75,10 +81,14 @@ long epicsShareAPI reGrep(const char *pattern)
         [](DBENTRY *entry, string const & recName, string const & value) {
             printf("%s\n", recName.c_str());
         });
+*/
+	return 0;
 }
 
 long epicsShareAPI reTest(const char *pattern, const char *value)
 {
+	assert(0);
+	/*
     if (!pattern || !value) {
         errlogSevPrintf(errlogMinor, "Usage: %s \"pattern\" \"value\"\n",
                 __func__);
@@ -89,10 +99,15 @@ long epicsShareAPI reTest(const char *pattern, const char *value)
         [](DBENTRY *entry, string const & recName, string const & value) {
             printf("%s\t%s\n", recName.c_str(), value.c_str());
         });
+	*/
+
+	return 0;
 }
 
 long epicsShareAPI reAddAlias(const char *pattern, const char *alias)
 {
+	assert(0);
+	/*
     if (!pattern || !alias) {
         errlogSevPrintf(errlogMinor, "Usage: %s \"pattern\" \"alias\"\n",
                 __func__);
@@ -108,11 +123,15 @@ long epicsShareAPI reAddAlias(const char *pattern, const char *alias)
                 printf("Alias %s -> %s created\n", recName.c_str(),
                     alias.c_str());
         });
+	*/
+	return 0;
 }
 
 long epicsShareAPI reAddInfo(const char *pattern, const char *name,
         const char *value)
 {
+	assert(0);
+	/*
     if (!pattern || !name || !value) {
         errlogSevPrintf(errlogMinor,
                 "Usage: %s \"pattern\" \"name\" \"value\"\n", __func__);
@@ -129,11 +148,16 @@ long epicsShareAPI reAddInfo(const char *pattern, const char *name,
                 printf("%s: added info(%s, '%s')\n", recName.c_str(), name,
                     value.c_str());
         });
+	*/
+
+	return 0;
 }
 
 long epicsShareAPI rePutField(const char *pattern, const char *field,
         const char *value)
 {
+	assert(0);
+	/*
     if (!pattern || !field || !value) {
         errlogSevPrintf(errlogMinor,
                 "Usage: %s \"pattern\" \"field\" \"value\"\n", __func__);
@@ -157,6 +181,9 @@ long epicsShareAPI rePutField(const char *pattern, const char *field,
                 printf("%s: put field(%s, '%s')\n", recName.c_str(), field,
                     value.c_str());
         });
+	*/
+
+	return 0;
 }
 
 

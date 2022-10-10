@@ -27,6 +27,7 @@ CHECK_RELEASE = YES
 
 # to suppress deprecation warnings
 USR_CPPFLAGS += -DUSE_TYPED_RSET
+CROSS_COMPILER_TARGET_ARCHS=
 
 
 # Set this when the IOC and build host use different paths
