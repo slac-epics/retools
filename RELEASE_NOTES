@@ -1,2 +1,5 @@
+R1.4.1-0.1.2: 14-Nov-2024, lorelli
+    Build for all cross and host targets instead of just RHEL6
+
 egumtow October 10, 2022
 initial build for SLAC, tag R1.4.1-0.1.0
